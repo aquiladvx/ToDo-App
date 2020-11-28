@@ -1,10 +1,11 @@
-package com.debcomp.aql.debcentral.infra.feature.main.model
+package com.debcomp.aql.debcentral.feature.tasks.model
 
 import android.app.Application
 import androidx.lifecycle.*
 import com.debcomp.aql.debcentral.infra.base.AppDataBase
 import com.debcomp.aql.debcentral.infra.data.TaskRepository
 import com.debcomp.aql.debcentral.infra.data.entity.TaskDTO
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
 
@@ -20,7 +21,7 @@ class TaskViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun addTask(taskDTO: TaskDTO) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             repository.addTask(taskDTO)
         }
     }

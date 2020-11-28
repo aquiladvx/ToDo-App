@@ -10,13 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DBCentral">
-        <activity android:name=".infra.feature.main.ui.MainActivity">
+        <activity android:name=".feature.tasks.TaskActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".feature.tasks.AddTaskActivity"/>
     </application>
 
 </manifest>

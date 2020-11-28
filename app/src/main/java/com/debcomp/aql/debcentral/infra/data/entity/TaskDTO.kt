@@ -6,9 +6,9 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "task_table")
 data class TaskDTO(
-        @PrimaryKey(autoGenerate = true) val id: Int = 0,
+        @PrimaryKey(autoGenerate = true) val id: Long = 0,
         val name: String,
-        val state: TaskState
+        val state: String = TaskState.TODO.name
 )
 
 enum class TaskState{
