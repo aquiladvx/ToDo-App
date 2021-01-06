@@ -2,14 +2,12 @@ package com.debcomp.aql.debcentral.feature.tasks
 
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.debcomp.aql.debcentral.DEBCentralApplication
 import com.debcomp.aql.debcentral.R
 import com.debcomp.aql.debcentral.feature.tasks.model.TaskViewModel
 import com.debcomp.aql.debcentral.infra.BaseActivity
-import com.debcomp.aql.debcentral.infra.data.entity.TaskDTO
 import kotlinx.android.synthetic.main.activity_task_list.*
 
 class TaskActivity: BaseActivity() {
@@ -40,13 +38,15 @@ class TaskActivity: BaseActivity() {
 
     private fun taskClickListener(taskId: Long) {
         Log.i(TAG, "item id = $taskId")
+        startActivity(DetailTaskActivity.start(this, taskId))
     }
 
     private fun setActions() {
         fab_add.setOnClickListener {
-            val intent = AddTaskActivity.start(this)
-            startActivity(intent)
+            startActivity(AddTaskActivity.start(this))
         }
+
+
     }
 
     private fun setObservers() {

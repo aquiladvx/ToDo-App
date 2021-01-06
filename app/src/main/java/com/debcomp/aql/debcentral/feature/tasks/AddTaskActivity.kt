@@ -21,7 +21,7 @@ class AddTaskActivity: BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_add_task)
+        setContentView(R.layout.activity_task_add)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 

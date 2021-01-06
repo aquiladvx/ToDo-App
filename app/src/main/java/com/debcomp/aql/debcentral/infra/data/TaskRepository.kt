@@ -16,6 +16,8 @@ class TaskRepository private constructor(
 
     fun getAllTasks(): LiveData<List<TaskDTO>> = localDataSource.getAllTasks()
 
+    fun getTaskById(id: Int): LiveData<TaskDTO> = localDataSource.getTaskById(id)
+
     companion object {
         fun create(localDataSource: TaskDAO): TaskRepository = TaskRepository(localDataSource)
     }
